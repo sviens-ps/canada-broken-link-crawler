@@ -1,13 +1,24 @@
 {
   "settings": {
     "max_workers": 8,
-    "request_delay": 0,
+    "request_delay": 0.2,
     "timeout_seconds": 30
   },
   "sitemaps": [
     {
-      "url": "https://example.com/sitemap.xml",
+      "url": "https://www.canada.ca/en/public-safety-canada.sitemap.xml",
       "include_prefixes": [],
+      "exclude_prefixes": [
+        "https://www.canada.ca/en/public-safety-canada/news/"
+      ]
+    },
+    {
+      "url": "https://www.canada.ca/en/services.sitemap.xml",
+      "include_prefixes": [
+        "https://www.canada.ca/en/services/defence/nationalsecurity",
+        "https://www.canada.ca/en/services/defence/securingborder",
+        "https://www.canada.ca/en/services/policing"
+      ],
       "exclude_prefixes": []
     }
   ],
