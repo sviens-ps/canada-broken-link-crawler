@@ -24,7 +24,9 @@ def main():
         urls = filter_urls(
             urls,
             sm["include_prefixes"],
-            sm["exclude_prefixes"]
+            sm["exclude_prefixes"],
+            sm.get("language"),
+            sm.get("url_transform")
         )
         all_urls.extend(urls)
 
