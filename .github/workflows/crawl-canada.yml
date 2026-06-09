@@ -1,0 +1,29 @@
+name: Crawl Canada.ca
+
+on:
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - name: Run crawler (Canada)
+        run: python crawler/main.py configs/canada.json
+
+      - name: Upload results
+        uses: actions/upload-artifact@v7
+        with:
+          name: canada-results
+          path: output/
