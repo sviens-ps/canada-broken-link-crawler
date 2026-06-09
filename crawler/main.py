@@ -20,11 +20,11 @@ def main():
     all_urls = []
 
     for sm in config["sitemaps"]:
-        urls = parse_sitemap(sm["url"], settings["timeout_seconds"])
+        urls = parse_sitemap(sm["url"], settings["timeout_seconds"])      
         urls = filter_urls(
             urls,
-            sm["include_prefixes"],
-            sm["exclude_prefixes"],
+            sm.get("include_prefixes", []),
+            sm.get("exclude_prefixes", []),
             sm.get("language"),
             sm.get("url_transform")
         )
