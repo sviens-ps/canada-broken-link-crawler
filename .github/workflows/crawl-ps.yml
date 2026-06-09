@@ -27,3 +27,4 @@ jobs:
         with:
           name: ps-results
           path: output/
+          archive: false
