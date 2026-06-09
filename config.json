@@ -1,0 +1,23 @@
+{
+  "settings": {
+    "max_workers": 8,
+    "request_delay": 0,
+    "timeout_seconds": 30
+  },
+  "sitemaps": [
+    {
+      "url": "https://example.com/sitemap.xml",
+      "include_prefixes": [],
+      "exclude_prefixes": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "Broken Links",
+      "type": "link_check"
+    }
+  ],
+  "output": {
+    "file": "output/broken_links_report.xlsx"
+  }
+}
