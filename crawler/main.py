@@ -7,8 +7,11 @@ from url_filter import filter_urls
 from link_checker import check_links
 from excel_writer import write_excel
 
-def main():
-    config = load_config()
+def main(): 
+    import sys
+    
+    config_path = sys.argv[1] if len(sys.argv) > 1 else "config.json"
+    config = load_config(config_path)
 
     settings = config["settings"]
     output_file = config["output"]["file"]
