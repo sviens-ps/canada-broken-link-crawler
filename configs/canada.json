@@ -1,0 +1,34 @@
+{
+  "settings": {
+    "max_workers": 8,
+    "request_delay": 0.2,
+    "timeout_seconds": 30
+  },
+  "sitemaps": [
+    {
+      "url": "https://www.canada.ca/en/public-safety-canada.sitemap.xml",
+      "language": { "type": "path", "value": "/en/" },
+      "include_prefixes": [],
+      "exclude_prefixes": [
+        "https://www.canada.ca/en/public-safety-canada/news/"
+      ]
+    },
+    {
+      "url": "https://www.canada.ca/en/services.sitemap.xml",
+      "language": { "type": "path", "value": "/en/" },
+      "include_prefixes": [
+        "https://www.canada.ca/en/services/defence/nationalsecurity",
+        "https://www.canada.ca/en/services/defence/securingborder",
+        "https://www.canada.ca/en/services/policing"
+      ],
+      "exclude_prefixes": []
+    }
+  ],
+  "checks": [
+    { "name": "Broken Links", "type": "link_check" }
+  ],
+  "output": {
+    "file": "output/canada_broken_links.xlsx",
+    "only_errors": true
+  }
+}
