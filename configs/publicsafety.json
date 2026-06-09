@@ -6,7 +6,7 @@
   },
   "sitemaps": [  
     {
-      "url": "https://www.publicsafety.gc.ca/sitemap.axd",
+      "url": "https://www.publicsafety.gc.ca/sitemapeng.axd",
       "language": { "type": "suffix", "value": "-en.aspx" },
       "url_transform": {
         "force_https": true,
