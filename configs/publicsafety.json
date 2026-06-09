@@ -4,12 +4,21 @@
     "request_delay": 0.3,
     "timeout_seconds": 30
   },
-  "sitemaps": [
+  "sitemaps": [  
     {
       "url": "https://www.publicsafety.gc.ca/sitemap.axd",
       "language": { "type": "suffix", "value": "-en.aspx" },
+      "url_transform": {
+        "force_https": true,
+        "force_www": true
+      },
       "include_prefixes": [],
-      "exclude_prefixes": []
+      "exclude_prefixes": [
+        "https://www.publicsafety.gc.ca/cnt/rsrcs/pblctns/",
+        "https://www.publicsafety.gc.ca/cnt/nws/",
+        "https://www.publicsafety.gc.ca/cnt/trnsprnc/",
+        "https://www.publicsafety.gc.ca/cnt/rsrcs/svc-stndrds-tpp/"
+      ]
     }
   ],
   "checks": [
