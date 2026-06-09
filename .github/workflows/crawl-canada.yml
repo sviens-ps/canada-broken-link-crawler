@@ -27,3 +27,4 @@ jobs:
         with:
           name: canada-results
           path: output/
+          archive: false
