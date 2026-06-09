@@ -40,7 +40,11 @@ def main():
             except Exception as e:
                 print(f"Error processing {futures[future]}: {e}")
 
-    # Step 3: Sort results
+    
+    # Step 3: Filter results (only pages with broken links)
+    results = [r for r in results if r.get("Broken Links") == "Yes"]
+    
+    # Step 4: Sort results
     results.sort(
         key=lambda r: (
             r.get("Broken Links") != "Yes",
@@ -48,7 +52,7 @@ def main():
         )
     )
 
-    # Step 4: Export to Excel
+    # Step 5: Export to Excel
     write_excel(results, output_file)
 
     print(f"✅ Done. Output saved to {output_file}")
