@@ -54,9 +54,6 @@ def check_links(url, timeout):
             if status in [404, 410]:
                 broken_links.append(f"{link} ({status})")
 
-            # warnings (not counted as broken)
-            elif status in [403, 401, 500, 502, 503, 504, "error"]:
-                warnings.append(f"{link} ({status})")
 
     except Exception:
         return {
