@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "max_workers": 6,
+    "request_delay": 0.3,
+    "timeout_seconds": 30
+  },
+  "sitemaps": [
+    {
+      "url": "https://www.publicsafety.gc.ca/sitemap.axd",
+      "language": { "type": "suffix", "value": "-en.aspx" },
+      "include_prefixes": [],
+      "exclude_prefixes": []
+    }
+  ],
+  "checks": [
+    { "name": "Broken Links", "type": "link_check" }
+  ],
+  "output": {
+    "file": "output/ps_broken_links.xlsx",
+    "only_errors": true
+  }
+}
